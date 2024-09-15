@@ -3,25 +3,22 @@ package org.example.spring6webapp.bootstrap;
 import org.example.spring6webapp.domain.Author;
 import org.example.spring6webapp.domain.Book;
 import org.example.spring6webapp.domain.Publisher;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
-import repositories.AuthorRepository;
-import repositories.BookRepository;
-import repositories.PublisherRepository;
+import org.example.spring6webapp.repositories.AuthorRepository;
+import org.example.spring6webapp.repositories.BookRepository;
+import org.example.spring6webapp.repositories.PublisherRepository;
+
 
 @Component
 public class BootstrapData implements CommandLineRunner {
+
 
     private  final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
     private final PublisherRepository publisherRepository;
 
 
-
-    @Autowired
     public BootstrapData(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
